@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 
 function Scanner() {
   const [BarcodeScanner, setBarcodeScanner] = useState<any>(null);
-  const [barcode, setBarcode] = useState<string>("No barcode detected.");
+  const [barcode, setBarcode] = useState<string | null>(null);
 
   useEffect(() => {
     import("react-qr-barcode-scanner").then(mod => {
@@ -16,14 +16,14 @@ function Scanner() {
         <BarcodeScanner
           width={500}
           height={500}
-          onUpdate={(result: any) => {
-            if (result && !barcode) {
-              setBarcode(result.getText());
+          onUpdate={(error: any, result: any) => {
+            if (!error && result && !barcode) {
+              setBarcode(result.text)
             }
           }}
         />
       )}
-      <p>{barcode}</p>
+      <p>Barcode: {barcode ?? 'None detected.'}</p>
     </>
   )
 }
