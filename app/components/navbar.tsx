@@ -9,7 +9,7 @@ function Navbar() {
       <h1>pocket pantry</h1>
       <ul>
         {pages.map(page =>
-          <li>
+          <li key={page}>
             <a href={`/${page}`}>{page}</a>
           </li>
         )}
