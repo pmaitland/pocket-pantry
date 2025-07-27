@@ -16,16 +16,20 @@ function Items() {
     <div>
       <h1>Items</h1>
       <table>
-        <tr>
-          <th>Name</th>
-          <th>Barcode</th>
-        </tr>
-        {items.map(item => (
-          <tr key={item.id}>
-            <td>{item.name}</td>
-            <td>{item.barcode}</td>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Barcode</th>
           </tr>
-        ))}
+        </thead>
+        <tbody>
+          {items.map(item => (
+            <tr key={item.id}>
+              <td>{item.name}</td>
+              <td>{item.barcode}</td>
+            </tr>
+          ))}
+        </tbody>
       </table>
     </div>
   )
