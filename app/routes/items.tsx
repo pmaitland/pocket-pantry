@@ -1,12 +1,12 @@
 import { useLoaderData } from '@remix-run/react'
 import type { LoaderFunctionArgs } from '@remix-run/node'
-import useDatabase from '../hooks/useDatabase'
+import useItems from '../hooks/useItems'
 
 export async function loader({
   request,
 }: LoaderFunctionArgs) {
-  const { db, items } = useDatabase()
-  return db.select().from(items).all()
+  const { items } = useItems()
+  return items
 }
 
 function Items() {
