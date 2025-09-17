@@ -1,4 +1,5 @@
 import { Links, Meta, Outlet, Scripts } from "@remix-run/react"
+import Navbar from './components/navbar'
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Links />
       </head>
       <body>
+        <Navbar />
         <Outlet />
         <Scripts />
       </body>
