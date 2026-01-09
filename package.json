@@ -5,6 +5,7 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
+    "db:migrations": "drizzle-kit generate:sqlite --out ./app/db/migrations --schema ./app/db/schema.server.ts",
     "dev": "node ./server.js",
     "start": "cross-env NODE_ENV=production node ./server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -14,10 +15,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@libsql/client": "^0.15.10",
     "@remix-run/express": "^2.17.0",
     "@remix-run/node": "^2.17.0",
     "@remix-run/react": "^2.17.0",
+    "better-sqlite3": "^12.2.0",
     "cross-env": "^10.0.0",
+    "dotenv": "^17.2.1",
+    "drizzle-orm": "^0.44.3",
     "express": "^4.21.2",
     "isbot": "^4.4.0",
     "react": "^18.3.1",
@@ -25,8 +30,11 @@
   },
   "devDependencies": {
     "@remix-run/dev": "^2.17.0",
+    "@types/better-sqlite3": "^7.6.13",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
+    "drizzle-kit": "^0.31.4",
+    "tsx": "^4.20.3",
     "vite": "^6.3.5"
   }
 }

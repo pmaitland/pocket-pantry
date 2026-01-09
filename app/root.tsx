@@ -1,11 +1,6 @@
-import {
-  Links,
-  Meta,
-  Outlet,
-  Scripts,
-} from "@remix-run/react";
+import { Links, Meta, Outlet, Scripts } from "@remix-run/react"
 
-export default function App() {
+function App() {
   return (
     <html>
       <head>
@@ -17,10 +12,11 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <h1>Hello world!</h1>
         <Outlet />
         <Scripts />
       </body>
     </html>
-  );
+  )
 }
+
+export default App

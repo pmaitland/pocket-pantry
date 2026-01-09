@@ -1,2 +1,4 @@
+*.db
+.env
 build
 node_modules
